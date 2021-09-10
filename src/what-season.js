@@ -17,7 +17,7 @@ export default function getSeason(date) {
   }
 
   if (isNaN(Date.parse(date))) {
-    throw 'Invalid date!';
+    throw new Error('Invalid date!');
   }
 
   const seasons = {
@@ -37,7 +37,3 @@ export default function getSeason(date) {
 
   return seasons[date.getMonth()];
 }
-
-// console.log(getSeason('foo'));
-// console.log(getSeason({ John: 'Smith' }));
-// console.log(getSeason(20192701));
