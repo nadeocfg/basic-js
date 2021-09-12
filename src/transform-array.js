@@ -43,11 +43,3 @@ export default function transform(arr) {
 
   return res.filter((item) => item !== null && item !== undefined);
 }
-
-// console.log(transform(3.312312));
-// console.log(transform(false));
-// console.log(transform(null));
-// console.log(transform(undefined));
-// console.log(transform({ foo: 'bar' }));
-
-// console.log(transform({ foo: 'bar' }));

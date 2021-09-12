@@ -16,7 +16,9 @@ export default function getSeason(date) {
     return 'Unable to determine the time of year!';
   }
 
-  if (isNaN(Date.parse(date))) {
+  try {
+    date.getTime();
+  } catch (error) {
     throw new Error('Invalid date!');
   }
 
