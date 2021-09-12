@@ -171,7 +171,7 @@ export default class VigenereCipheringMachine {
       .toUpperCase()
       .split('(=*-*=)');
 
-    return this.type ? res.join('') : res.reverse().join('');
+    return this.type ? res.join('') : res.join('').split('').reverse().join('');
   };
 
   getDecryptedStrFromArrays = (msg, keyedMsg) => {
@@ -196,12 +196,12 @@ export default class VigenereCipheringMachine {
       .toUpperCase()
       .split('(=*-*=)');
 
-    return this.type ? res.join('') : res.reverse().join('');
+    return this.type ? res.join('') : res.join('').split('').reverse().join('');
   };
 }
 
-// const directMachine = new VigenereCipheringMachine();
-// const reverseMachine = new VigenereCipheringMachine(false);
+const directMachine = new VigenereCipheringMachine();
+const reverseMachine = new VigenereCipheringMachine(false);
 
 // const _0x3a46 = [
 //   'random',
@@ -252,7 +252,7 @@ export default class VigenereCipheringMachine {
 //   return _0x2079de;
 // };
 
-// for (let i = 2; i < 200; i += 1) {
+// for (let i = 2; i < 20; i += 1) {
 //   const testStr = createTestString(i);
 //   const reversedTestStr = testStr.split('').reverse().join('');
 //   const testKey = createTestKey(i - (i % 2));
@@ -267,3 +267,8 @@ export default class VigenereCipheringMachine {
 //   console.log(res === testStr);
 //   console.log('--------------------------');
 // }
+
+// console.log(reverseMachine.encrypt('attack at dawn!', 'alphonse'));
+// console.log('!ULLD XS XQHIEA');
+// console.log(reverseMachine.decrypt('AEIHQX SX DLLU!', 'alphonse'));
+// console.log('!NWAD TA KCATTA');
