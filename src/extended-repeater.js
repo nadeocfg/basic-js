@@ -39,16 +39,3 @@ export default function repeater(str, options) {
 
   return strArr.join(separator);
 }
-
-console.log(
-  repeater('REPEATABLE_STRING', {
-    repeatTimes: 2,
-    separator: '222',
-    addition: 'ADDITION',
-    additionRepeatTimes: 3,
-  })
-);
-
-console.log(
-  'REPEATABLE_STRINGADDITION|ADDITION|ADDITION222REPEATABLE_STRINGADDITION|ADDITION|ADDITION'
-);

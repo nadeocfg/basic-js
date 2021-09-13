@@ -30,14 +30,14 @@ export default function getCommonCharacterCount(str1, str2) {
   return counter;
 }
 
-console.log(getCommonCharacterCount('aabcc', 'adcaa'));
-console.log(3);
+// console.log(getCommonCharacterCount('aabcc', 'adcaa'));
+// console.log(3);
 
-console.log(getCommonCharacterCount('zzzz', 'zzzzzzz'));
-console.log(4);
+// console.log(getCommonCharacterCount('zzzz', 'zzzzzzz'));
+// console.log(4);
 
-console.log(getCommonCharacterCount('abca', 'xyzbac'));
-console.log(3);
+// console.log(getCommonCharacterCount('abca', 'xyzbac'));
+// console.log(3);
 
-console.log(getCommonCharacterCount('', 'abc'));
-console.log(0);
+// console.log(getCommonCharacterCount('', 'abc'));
+// console.log(0);

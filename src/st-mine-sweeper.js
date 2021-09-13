@@ -23,7 +23,59 @@ import { NotImplementedError } from '../extensions/index.js';
  *  [1, 1, 1]
  * ]
  */
-export default function minesweeper (/* matrix */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function minesweeper(matrix) {
+  const newMatrix = matrix.map((row) => row.map(() => 0));
+
+  for (let i = 0; i < matrix.length; i += 1) {
+    for (let j = 0; j < matrix[i].length; j += 1) {
+      if (matrix[i][j] === true) {
+        newMatrix[i][j] = 1;
+      } else {
+        let counter = 0;
+
+        if (matrix[i - 1] !== undefined && matrix[i - 1][j - 1] === true) {
+          counter += 1;
+        }
+        if (matrix[i - 1] !== undefined && matrix[i - 1][j] === true) {
+          counter += 1;
+        }
+        if (matrix[i - 1] !== undefined && matrix[i - 1][j + 1] === true) {
+          counter += 1;
+        }
+        if (matrix[i][j - 1] === true) {
+          counter += 1;
+        }
+        if (matrix[i][j + 1] === true) {
+          counter += 1;
+        }
+        if (matrix[i + 1] !== undefined && matrix[i + 1][j - 1] === true) {
+          counter += 1;
+        }
+        if (matrix[i + 1] !== undefined && matrix[i + 1][j] === true) {
+          counter += 1;
+        }
+        if (matrix[i + 1] !== undefined && matrix[i + 1][j + 1] === true) {
+          counter += 1;
+        }
+
+        newMatrix[i][j] = counter;
+      }
+    }
+  }
+
+  return newMatrix;
 }
+
+// console.log(
+//   minesweeper([
+//     [true, false, false],
+//     [false, true, false],
+//     [false, false, false],
+//   ])
+// );
+
+// console.log([
+//   [1, 2, 1],
+//   [2, 1, 1],
+//   [1, 1, 1],
+// ]);
